@@ -23,7 +23,17 @@ class NhanVien
 		void Xuat(); 
 		virtual void Nhap();
 		float getLuong();
-		//...bo sung code
+};
+
+//Class Bien che
+class BienChe: public NhanVien
+{	protected: //private:
+		float HeSoLuong;
+		float HeSoPhuCap;
+	public:
+		BienChe();
+		void TinhLuong();
+		void Nhap();
 };
 
 int main()
@@ -45,16 +55,34 @@ int main()
 			break;
 	}
 	while (1);
+
+
+//Dinh nghia ham thanh vien cho lop NhanVien
+NhanVien::NhanVien()
+{
+	strcpy(HoTen,""); 
+	strcpy(MaSo,"");
+	Luong=0;
+}
+
+float NhanVien::getLuong()
+{
+	return Luong;
+}
+
+void NhanVien::Nhap()
+{
+	cout<<"Ma so:";	cin>>MaSo;
+	cin.ignore(); //xoa dau Enter trong buffer
+	cout<<"Ho va ten:"; 
+	cin.getline(HoTen,MAX_TEN);
+	//cin>>HoTen;
+}
+
+void NhanVien::Xuat() 
+{	//setiosflags(ios::fixed)<<setprecision(2);
+	cout<<"Ma so:"<<MaSo<<",Ho va ten:"<<HoTen
+		 <<",Luong:"<<Luong<<endl;
+}
 	
-//Class Bien che
-class BienChe: public NhanVien
-{	protected: //private:
-		float HeSoLuong;
-		float HeSoPhuCap;
-	public:
-		BienChe();
-		void TinhLuong();
-		void Nhap();
-		//...bo sung code
-};
 
