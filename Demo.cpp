@@ -148,4 +148,23 @@ void BienChe::TinhLuong()
 {
 	Luong=LCB*(HeSoLuong+HeSoPhuCap);
 }	
+//Cac ham thanh vien trong lop HopDong
+HopDong::HopDong()
+{
+	TienCong=NgayCong=0;
+}
 
+void HopDong::Nhap()
+{
+	NhanVien::Nhap();
+	cout<<"Tien cong: "; cin>>TienCong;
+	cout<<"Ngay cong: "; cin>>NgayCong;
+}
+
+void HopDong::TinhLuong()
+{
+	if(NgayCong<24)
+		Luong=TienCong*NgayCong;
+	else
+		Luong=TienCong*1.2*(NgayCong-24);
+}
