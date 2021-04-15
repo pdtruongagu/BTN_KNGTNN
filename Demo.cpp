@@ -36,6 +36,16 @@ class BienChe: public NhanVien
 		void Nhap();
 };
 
+class HopDong : public NhanVien
+{	protected: //private:
+		float TienCong; // 1 ngay
+		float NgayCong; // lon hon 24 ngay thi tinh 1.2
+	public:
+		HopDong();
+		void TinhLuong();
+		void Nhap();
+		//...bo sung code
+};
 int main()
 {
 	NhanVien *Nv[100];	int N=0;
