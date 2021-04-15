@@ -55,7 +55,45 @@ int main()
 			break;
 	}
 	while (1);
-
+	//Xuat
+	for(int i=0; i<N; i++)
+	{
+		cout<<"Thong tin cua nhan vien thu "<<i+1<<": ";
+			Nv[i]->TinhLuong();
+			Nv[i]->Xuat();
+	}
+	
+	//Tongluong
+	float tongluong=0;
+	for(int i=0; i<N; i++)
+	{
+		Nv[i]->TinhLuong();
+		tongluong+=Nv[i]->getLuong();
+	}
+	cout<<"\nTong luong cac nhan vien: "<<tongluong;
+	
+	//TBCLuong
+	float tbcluong=0;
+	for(int i=0; i<N; i++)
+	{
+		Nv[i]->TinhLuong();
+		tbcluong+=Nv[i]->getLuong();
+	}
+	tbcluong/=N;
+	cout<<"\nTBC luong cac nhan vien: "<<tbcluong;
+	
+	//Liet ke luong lon hon 5tr
+	cout<<"\nNhung nhan vien co luong > 5tr: ";
+	for(int i=0; i<N; i++)
+	{
+		Nv[i]->TinhLuong();
+		if(Nv[i]->getLuong() > 5e+006)
+			Nv[i]->Xuat();
+	}
+	
+	getch();
+	return 1;
+}
 
 //Dinh nghia ham thanh vien cho lop NhanVien
 NhanVien::NhanVien()
