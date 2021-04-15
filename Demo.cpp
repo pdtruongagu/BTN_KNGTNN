@@ -26,6 +26,25 @@ class NhanVien
 		//...bo sung code
 };
 
+int main()
+{
+	NhanVien *Nv[100];	int N=0;
+	char Chon,Loai;
+	cout<<"Nhap thong tin cho cac Nhan vien"<<endl;
+	do
+	{	cout<<"Bien che hay Hop dong (B/H)? ";
+		cin>>Loai; 	Loai=toupper(Loai);
+		if (Loai=='B')
+			Nv[N]=new BienChe;
+		else
+			Nv[N]=new HopDong;
+		Nv[N++]->Nhap();
+		cout<<"Tiep tuc (C/K)? ";	cin>>Chon;
+		Chon=toupper(Chon);
+		if ((N==100)||(Chon=='K'))
+			break;
+	}
+	while (1);
 	
 //Class Bien che
 class BienChe: public NhanVien
