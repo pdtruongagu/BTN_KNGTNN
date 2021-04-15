@@ -84,5 +84,20 @@ void NhanVien::Xuat()
 	cout<<"Ma so:"<<MaSo<<",Ho va ten:"<<HoTen
 		 <<",Luong:"<<Luong<<endl;
 }
-	
+BienChe::BienChe()
+{
+	HeSoLuong=HeSoPhuCap=0;
+}
+
+void BienChe::Nhap()
+{	
+	NhanVien::Nhap();
+	cout<<"He so luong: "; cin>>HeSoLuong;
+	cout<<"He so phu cap: "; cin>>HeSoPhuCap;
+}
+
+void BienChe::TinhLuong()
+{
+	Luong=LCB*(HeSoLuong+HeSoPhuCap);
+}	
 
