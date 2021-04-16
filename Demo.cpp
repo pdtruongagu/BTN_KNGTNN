@@ -43,9 +43,8 @@ class HopDong : public NhanVien
 	public:
 		HopDong();
 		void TinhLuong();
-		void Nhap();
-		//...bo sung code
 };
+
 int main()
 {
 	NhanVien *Nv[100];	int N=0;
@@ -132,6 +131,8 @@ void NhanVien::Xuat()
 	cout<<"Ma so:"<<MaSo<<",Ho va ten:"<<HoTen
 		 <<",Luong:"<<Luong<<endl;
 }
+
+//Cac ham thanh vien trong lop BienChe
 BienChe::BienChe()
 {
 	HeSoLuong=HeSoPhuCap=0;
@@ -147,7 +148,8 @@ void BienChe::Nhap()
 void BienChe::TinhLuong()
 {
 	Luong=LCB*(HeSoLuong+HeSoPhuCap);
-}	
+}
+
 //Cac ham thanh vien trong lop HopDong
 HopDong::HopDong()
 {
